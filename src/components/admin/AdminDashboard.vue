@@ -20,10 +20,7 @@
             </div>
 
 
-            <button
-                class="primary-btn add-question-btn"
-                @click="showForm = true"
-            >
+            <button class="primary-btn add-question-btn" @click="showForm = true">
 
                 + Add Question
 
@@ -53,10 +50,32 @@
 
         <div class="admin-toolbar">
 
+            <CategoryFilter v-model="selectedCategory" />
 
-            <CategoryFilter 
-                v-model="selectedCategory"
-            />
+
+            <div class="pagination-select">
+
+                <select v-model="itemsPerPage" class="category-select">
+
+                    <option value="5">
+                        Show 5
+                    </option>
+
+                    <option value="10">
+                        Show 10
+                    </option>
+
+                    <option value="20">
+                        Show 20
+                    </option>
+
+                    <option value="50">
+                        Show 50
+                    </option>
+
+                </select>
+
+            </div>
 
 
         </div>
@@ -73,11 +92,28 @@
         <div class="question-table-wrapper">
 
 
-            <QuestionTable
-                :questions="filteredQuestions"
-                @edit="editQuestion"
-                @delete="deleteQuestion"
-            />
+            <QuestionTable :questions="filteredQuestions" @edit="editQuestion" @delete="deleteQuestion" />
+            <div class="pagination-controls" v-if="totalPages > 1">
+
+
+                <button class="secondary-btn" @click="currentPage--" :disabled="currentPage === 1">
+                    Previous
+                </button>
+
+
+
+                <span>
+                    Page {{ currentPage }} of {{ totalPages }}
+                </span>
+
+
+
+                <button class="primary-btn" @click="currentPage++" :disabled="currentPage === totalPages">
+                    Next
+                </button>
+
+
+            </div>
 
 
         </div>
@@ -91,15 +127,7 @@
         ============================ -->
 
 
-        <QuestionForm
-
-            v-if="showForm"
-
-            :question="editingQuestion"
-
-            @close="closeForm"
-
-        />
+        <QuestionForm v-if="showForm" :question="editingQuestion" @close="closeForm" />
 
 
 
@@ -120,18 +148,59 @@ const questionStore = useQuestionStore();
 
 questionStore.initialize();
 
+const itemsPerPage = ref(10);
+const currentPage = ref(1);
 const selectedCategory = ref("");
 const showForm = ref(false);
 const editingQuestion = ref(null);
 
 const filteredQuestions = computed(() => {
-    if (!selectedCategory.value) {
-        return questionStore.questions;
+
+
+    let data = questionStore.questions;
+
+
+    if (selectedCategory.value) {
+
+        data = data.filter(
+            q => q.category === selectedCategory.value
+        );
+
     }
 
-    return questionStore.questions.filter(
-        q => q.category === selectedCategory.value
+
+    const start =
+        (currentPage.value - 1) * itemsPerPage.value;
+
+
+    return data.slice(
+        start,
+        start + Number(itemsPerPage.value)
     );
+
+
+});
+
+const totalPages = computed(() => {
+
+
+    let data = questionStore.questions;
+
+
+    if (selectedCategory.value) {
+
+        data = data.filter(
+            q => q.category === selectedCategory.value
+        );
+
+    }
+
+
+    return Math.ceil(
+        data.length / itemsPerPage.value
+    );
+
+
 });
 
 function editQuestion(question) {

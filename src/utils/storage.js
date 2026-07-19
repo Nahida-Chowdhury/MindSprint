@@ -32,3 +32,25 @@ export function getQuestions() {
 export function clearStorage() {
   localStorage.clear();
 }
+
+const CATEGORY_KEY = "mindsprint_categories";
+
+
+export function getCategories(){
+
+    return JSON.parse(
+        localStorage.getItem(CATEGORY_KEY)
+    ) || [];
+
+}
+
+
+
+export function saveCategories(categories){
+
+    localStorage.setItem(
+        CATEGORY_KEY,
+        JSON.stringify(categories)
+    );
+
+}
