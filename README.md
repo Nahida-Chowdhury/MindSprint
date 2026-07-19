@@ -1,38 +1,138 @@
-# MindSprint
+# 🧠 MindSprint
 
-This template should help get you started developing with Vue 3 in Vite.
+A modern and responsive Quiz Management System built with **Vue 3**, **Pinia**, and **Vue Router**. MindSprint allows users to take quizzes across multiple categories while providing an admin dashboard to manage questions and categories dynamically.
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🚀 Features
 
-## Recommended Browser Setup
+### 👨‍🎓 User Features
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- Browse quiz categories
+- Dynamic quiz categories
+- Start quiz with name and email
+- Multiple-choice questions
+- Quiz timer
+- Instant score calculation
+- Performance result page
+- Leaderboard / Results page
+- Search quiz results
+- Responsive design
+- Dark / Light mode
+- Scroll to top button
+- Custom 404 Not Found page
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### 👨‍💼 Admin Features
 
-## Project Setup
+- Dashboard
+- Add new questions
+- Edit questions
+- Delete questions
+- Create new quiz categories
+- Category filtering
+- Pagination
+- Question management
+- Persistent data using LocalStorage
 
-```sh
+---
+
+## 🛠️ Built With
+
+- Vue 3 (Composition API)
+- Pinia
+- Vue Router
+- Bootstrap 5
+- Bootstrap Icons
+- Animate.css
+- CSS3
+- LocalStorage
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+│
+├── assets/
+│   └── css/
+│
+├── components/
+│   ├── admin/
+│   ├── common/
+│   ├── dashboard/
+│   └── quiz/
+│
+├── data/
+│
+├── router/
+│
+├── stores/
+│
+├── utils/
+│
+├── views/
+│
+├── App.vue
+└── main.js
+```
+
+## ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/Nahida-Chowdhury/MindSprint.git
+```
+
+Go to the project directory
+
+```bash
+cd mindsprint
+```
+
+Install dependencies
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Run the development server
 
-```sh
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+Build for production
 
-```sh
+```bash
 npm run build
 ```
+
+---
+
+## 📊 Project Highlights
+
+- Responsive UI
+- Dynamic category management
+- Modular component architecture
+- State management using Pinia
+- Client-side routing
+- Persistent storage with LocalStorage
+- Clean and reusable code structure
+
+---
+
+## 👩‍💻 Author
+
+**Nahida Chowdhury**
+
+Software Engineering Intern
+
+---
+
+## 📄 License
+
+This project was developed for educational purposes as part of an internship and academic learning.
