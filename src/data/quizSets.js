@@ -42,7 +42,7 @@ export const quizSets = [
   {
     id: 5,
     name: "General Knowledge",
-    slug: "generalKnowledge",
+    slug: "general-knowledge",
     icon: "🧠",
     color: "general",
     questions: 10,

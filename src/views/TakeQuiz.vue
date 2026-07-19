@@ -94,10 +94,6 @@ import { useRoute, useRouter } from "vue-router";
 
 import Navbar from "../components/common/Navbar.vue";
 
-import { quizSets } from "../data/quizSets";
-
-import { questionBank } from "../data/questions";
-
 import { useQuizStore } from "../stores/quizStore";
 import { useQuestionStore } from "../stores/questionStore";
 
@@ -113,11 +109,42 @@ const name = ref("");
 
 const email = ref("");
 
-const selectedQuiz = computed(() =>
-  quizSets.find((q) => q.slug === category)
-);
 
 const questionStore = useQuestionStore();
+
+questionStore.initialize();
+
+const selectedQuiz = computed(() => {
+  const questions = questionStore.getByCategory(category);
+
+  if (!questions.length) {
+    return null;
+  }
+
+  const icons = {
+    sports: "⚽",
+    history: "🏺",
+    science: "🧪",
+    technology: "💻",
+    "general-knowledge": "🧠",
+  };
+
+  return {
+    slug: category,
+
+    name: category
+      .replace(/-/g, " ")
+      .replace(/\b\w/g, c => c.toUpperCase()),
+
+    icon: icons[category] || "🧩",
+
+    description: `Test your knowledge in ${category.replace(/-/g, " ")}`,
+
+    duration: 10,
+
+    questions: questions.length,
+  };
+});
 
 
 function startQuiz() {
