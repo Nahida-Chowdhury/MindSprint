@@ -2231,280 +2231,296 @@ button {
     justify-content: center;
     align-items: center;
 
-    padding: 25px;
+    padding: 20px;
 
-    background: rgba(15, 23, 42, .75);
-    backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, .65);
+    backdrop-filter: blur(8px);
 }
 
+
+/* ===========================
+   FORM CARD
+=========================== */
+
 .question-form {
-    width: 850px;
-    max-width: 100%;
-    max-height: 90vh;
+
+    width: 650px;
+    max-width: 95%;
+
+    max-height: 85vh;
 
     overflow-y: auto;
 
-    padding: 35px;
+    padding: 25px;
 
-    border-radius: 24px;
+    border-radius: 20px;
 
-    background: #ffffff;
-    color: #1E293B;
+    background: var(--card-bg, #ffffff);
 
-    box-shadow: 0 25px 60px rgba(0, 0, 0, .25);
+    color: var(--text-color, #1e293b);
+
+    box-shadow: 
+        0 20px 50px rgba(0,0,0,.25);
+
 }
+
+
+
+/* Scrollbar */
 
 .question-form::-webkit-scrollbar {
-    width: 8px;
+
+    width: 6px;
+
 }
+
 
 .question-form::-webkit-scrollbar-thumb {
+
     background: #6C63FF;
+
     border-radius: 20px;
+
 }
 
-/* ==========================================================
-   FORM TITLE
-========================================================== */
+
+
+/* ===========================
+   TITLE
+=========================== */
+
 
 .question-form h2 {
-    font-size: 30px;
+
+    font-size: 24px;
+
     font-weight: 700;
-    margin-bottom: 30px;
+
+    margin-bottom: 22px;
+
     text-align: center;
+
     color: #6C63FF;
+
 }
 
-/* ==========================================================
-   LABELS
-========================================================== */
+
+
+/* ===========================
+   LABEL
+=========================== */
+
 
 .question-form label {
-    display: block;
-    margin-bottom: 8px;
 
-    font-weight: 600;
-    color: #334155;
+    display:block;
+
+    margin-bottom:6px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color: var(--text-color,#334155);
+
 }
 
-/* ==========================================================
+
+
+/* ===========================
    INPUTS
-========================================================== */
+=========================== */
+
 
 .question-form input,
 .question-form textarea,
 .question-form select {
 
-    width: 100%;
 
-    padding: 14px 16px;
+    width:100%;
 
-    border: 1px solid #CBD5E1;
+    padding:11px 14px;
 
-    border-radius: 12px;
+    border-radius:10px;
 
-    font-size: 15px;
+    border:1px solid #CBD5E1;
 
-    transition: .25s;
+    font-size:14px;
+
+    transition:.25s;
+
+    background:var(--input-bg,#fff);
+
+    color:var(--text-color,#1e293b);
+
 }
+
+
 
 .question-form textarea {
-    resize: vertical;
-    min-height: 110px;
+
+    resize:none;
+
+    min-height:80px;
+
 }
+
+
 
 .question-form input:focus,
 .question-form textarea:focus,
 .question-form select:focus {
 
-    border-color: #6C63FF;
 
-    box-shadow: 0 0 0 4px rgba(108, 99, 255, .15);
+    outline:none;
 
-    outline: none;
+    border-color:#6C63FF;
+
+    box-shadow:
+    0 0 0 3px rgba(108,99,255,.15);
 
 }
 
-/* ==========================================================
-   OPTION BOXES
-========================================================== */
+
+
+/* ===========================
+   SPACING
+=========================== */
+
 
 .question-form .mb-3 {
-    margin-bottom: 20px !important;
-}
 
-.question-form .mb-3:nth-child(n+3) {
-
-    background: #F8FAFC;
-
-    padding: 18px;
-
-    border-radius: 14px;
+    margin-bottom:14px !important;
 
 }
 
-/* ==========================================================
+
+
+.question-form .mb-4 {
+
+    margin-bottom:18px !important;
+
+}
+
+
+
+/* Option boxes */
+
+.question-form .mb-3:nth-child(n+4){
+
+    background:rgba(108,99,255,.05);
+
+    padding:12px;
+
+    border-radius:12px;
+
+}
+
+
+
+/* ===========================
    BUTTONS
-========================================================== */
+=========================== */
+
 
 .form-actions {
 
-    margin-top: 35px;
+    margin-top:25px;
 
-    display: flex;
+    display:flex;
 
-    justify-content: flex-end;
+    justify-content:flex-end;
 
-    gap: 15px;
+    gap:12px;
 
 }
+
+
 
 .form-actions button {
 
-    min-width: 140px;
+    min-width:110px;
 
-    padding: 13px 22px;
+    padding:10px 18px;
 
-    border: none;
+    border:none;
 
-    border-radius: 12px;
+    border-radius:10px;
 
-    font-weight: 600;
+    font-size:14px;
 
-    transition: .3s;
+    font-weight:600;
 
-    cursor: pointer;
+    cursor:pointer;
+
+    transition:.3s;
 
 }
+
+
 
 .secondary-btn {
 
-    background: #E2E8F0;
+    background:#E2E8F0;
 
-    color: #334155;
+    color:#334155;
 
 }
+
+
 
 .secondary-btn:hover {
 
-    background: #CBD5E1;
+    background:#CBD5E1;
 
 }
+
+
 
 .primary-btn {
 
-    background: linear-gradient(135deg, #6C63FF, #9333EA);
+    background:
+    linear-gradient(135deg,#6C63FF,#9333EA);
 
-    color: white;
+    color:white;
 
 }
+
+
 
 .primary-btn:hover {
 
-    transform: translateY(-3px);
+    transform:translateY(-2px);
 
-    box-shadow: 0 15px 30px rgba(108, 99, 255, .35);
-
-}
-
-/* ==========================================================
-   RESPONSIVE
-========================================================== */
-
-@media (max-width:768px) {
-
-    .question-form {
-
-        padding: 25px;
-
-    }
-
-    .question-form h2 {
-
-        font-size: 24px;
-
-    }
-
-    .form-actions {
-
-        flex-direction: column;
-
-    }
-
-    .form-actions button {
-
-        width: 100%;
-
-    }
-
-}
-
-/* ==========================================================
-   DARK MODE - QUESTION FORM MODAL
-========================================================== */
-
-
-[data-theme="dark"] .question-form-overlay {
-
-    background: rgba(2, 6, 23, .85);
+    box-shadow:
+    0 10px 25px rgba(108,99,255,.35);
 
 }
 
 
 
 /* ==========================================================
-   FORM CARD
+   DARK MODE
 ========================================================== */
 
 
 [data-theme="dark"] .question-form {
 
-    background: #0f172a;
 
-    color: #e2e8f0;
+    background:#111827;
 
-    border: 1px solid #1e293b;
-
-    box-shadow:
-        0 25px 70px rgba(0, 0, 0, .55);
+    color:#E5E7EB;
 
 }
 
-
-
-/* ==========================================================
-   TITLE
-========================================================== */
-
-
-[data-theme="dark"] .question-form h2 {
-
-    color: #a78bfa;
-
-}
-
-
-
-
-
-/* ==========================================================
-   LABELS
-========================================================== */
 
 
 [data-theme="dark"] .question-form label {
 
-    color: #cbd5e1;
+    color:#CBD5E1;
 
 }
 
-
-
-
-
-/* ==========================================================
-   INPUTS
-========================================================== */
 
 
 [data-theme="dark"] .question-form input,
@@ -2512,113 +2528,29 @@ button {
 [data-theme="dark"] .question-form select {
 
 
-    background: #020617;
+    background:#1F2937;
 
-    color: #f8fafc;
+    color:#F8FAFC;
 
-    border-color: #334155;
-
-
-}
-
-
-
-[data-theme="dark"] .question-form input::placeholder,
-[data-theme="dark"] .question-form textarea::placeholder {
-
-
-    color: #64748b;
-
+    border-color:#374151;
 
 }
 
 
 
+[data-theme="dark"] .question-form .mb-3:nth-child(n+4){
 
-[data-theme="dark"] .question-form input:focus,
-[data-theme="dark"] .question-form textarea:focus,
-[data-theme="dark"] .question-form select:focus {
-
-
-    border-color: #8b5cf6;
-
-    box-shadow:
-        0 0 0 4px rgba(139, 92, 246, .18);
-
+    background:rgba(255,255,255,.04);
 
 }
 
-
-
-/* dropdown options */
-
-
-[data-theme="dark"] .question-form select option {
-
-    background: #0f172a;
-
-    color: white;
-
-}
-
-
-
-
-
-/* ==========================================================
-   OPTION BOXES
-========================================================== */
-
-
-[data-theme="dark"] .question-form .mb-3:nth-child(n+3) {
-
-
-    background: #111827;
-
-    border: 1px solid #1e293b;
-
-
-}
-
-
-
-
-
-/* ==========================================================
-   BUTTONS
-========================================================== */
 
 
 [data-theme="dark"] .secondary-btn {
 
+    background:#374151;
 
-    background: #1e293b;
-
-    color: #e2e8f0;
-
-
-}
-
-
-
-[data-theme="dark"] .secondary-btn:hover {
-
-
-    background: #334155;
-
-
-}
-
-
-
-[data-theme="dark"] .primary-btn {
-
-
-    background:
-        linear-gradient(135deg,
-            #8b5cf6,
-            #6366f1);
-
+    color:#F8FAFC;
 
 }
 
@@ -2626,16 +2558,45 @@ button {
 
 
 
-/* ==========================================================
-   SCROLLBAR
-========================================================== */
+/* ===========================
+   MOBILE
+=========================== */
 
 
-[data-theme="dark"] .question-form::-webkit-scrollbar-thumb {
+@media(max-width:768px){
 
 
-    background: #8b5cf6;
+    .question-form {
 
+        width:100%;
+
+        padding:20px;
+
+    }
+
+
+
+    .question-form h2 {
+
+        font-size:22px;
+
+    }
+
+
+
+    .form-actions {
+
+        flex-direction:column;
+
+    }
+
+
+
+    .form-actions button {
+
+        width:100%;
+
+    }
 
 }
 
@@ -3155,8 +3116,6 @@ td {
 
 
 
-
-
 /* ==========================================================
    HEADER
 ========================================================== */
@@ -3252,6 +3211,72 @@ td {
 
 }
 
+.admin-toolbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:30px;
+
+}
+
+
+.pagination-select select{
+
+    min-width:140px;
+
+}
+
+
+.pagination-controls{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-top:30px;
+
+}
+
+
+.pagination-controls span{
+
+    font-weight:600;
+
+    color:var(--text-color);
+
+}
+
+
+
+@media(max-width:768px){
+
+    .admin-toolbar{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+
+    .pagination-select select{
+
+        width:100%;
+
+    }
+
+
+}
 
 
 
@@ -4498,4 +4523,45 @@ td {
 
     filter: brightness(1.15);
 
+}
+
+/* ==========================================
+   FLOATING SCROLL TO TOP
+========================================== */
+
+.scroll-top-btn {
+    position: fixed;
+    right: 25px;
+    bottom: 30px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #6C63FF, #9333EA);
+    color: #fff;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    box-shadow: 0 15px 35px rgba(108, 99, 255, .35);
+
+    transition: all .3s ease;
+
+    z-index: 999;
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 0 20px 40px rgba(108, 99, 255, .45);
+}
+
+.scroll-top-btn:active {
+    transform: scale(.95);
 }
